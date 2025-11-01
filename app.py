@@ -31,6 +31,10 @@ async def health_check():
 async def generate(request: GenerationRequest):
     global request_count
     request_count += 1
+    
+     # ✅ 2초 대기
+    await asyncio.sleep(2)
+    
     # Simple mock implementation; you'd do your actual work here!
     generated_text = f"Response to: {request.prompt} (request #{request_count})"
     return {"generated_text": generated_text}
