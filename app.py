@@ -1,6 +1,9 @@
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 # Create FastAPI app
 app = FastAPI()
